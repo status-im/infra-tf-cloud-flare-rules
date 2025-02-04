@@ -18,10 +18,10 @@ variable "default_path" {
 variable "redirects" {
   description = "List of redirect entries to create as page rules."
   type        = list(object({
-    domain = string
-    name   = string
-    url    = string
-    status_code = number
+    domain      = string
+    name        = string
+    url         = string
+    status_code = optional(number, 302)
     /* path = string */
   }))
   default     = []
